@@ -1,7 +1,8 @@
+/* eslint-disable linebreak-style */
 import React from "react";
-import "./App.css";
 import { useQuery } from "@apollo/react-hooks";
 import { gql } from "apollo-boost";
+import { SearchBar } from "./components/searchBar/searchBar";
 
 const query = gql`
 	query {
@@ -18,7 +19,11 @@ function App() {
 
 	console.log(response);
 
-	return <div className="App" />;
+	return (
+		<div>
+			<SearchBar/>
+		</div>
+	);
 }
 
 export default App;

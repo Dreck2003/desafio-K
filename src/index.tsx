@@ -1,10 +1,11 @@
+/* eslint-disable linebreak-style */
 import React from "react";
 import ReactDOM from "react-dom/client";
-import "./index.css";
+import "./css/index.css";
+import "./css/clasessUtils.css";
 import { ApolloClient, HttpLink, InMemoryCache } from "apollo-boost";
 import { ApolloProvider } from "@apollo/react-hooks";
 import App from "./App";
-import reportWebVitals from "./reportWebVitals";
 
 const client = new ApolloClient({
 	cache: new InMemoryCache(),
@@ -22,7 +23,3 @@ root.render(
 	</ApolloProvider>
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
