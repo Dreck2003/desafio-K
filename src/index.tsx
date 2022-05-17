@@ -5,7 +5,7 @@ import "./css/index.css";
 import "./css/clasessUtils.css";
 import { ApolloClient, HttpLink, InMemoryCache } from "apollo-boost";
 import { ApolloProvider } from "@apollo/react-hooks";
-import App from "./App";
+import App from "./Router";
 
 const client = new ApolloClient({
 	cache: new InMemoryCache(),
@@ -22,4 +22,3 @@ root.render(
 		<App />
 	</ApolloProvider>
 );
-

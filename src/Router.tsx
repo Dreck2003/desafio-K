@@ -3,6 +3,7 @@ import React from "react";
 import { useQuery } from "@apollo/react-hooks";
 import { gql } from "apollo-boost";
 import { SearchBar } from "./components/searchBar/searchBar";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 const query = gql`
 	query {
@@ -13,17 +14,14 @@ const query = gql`
 	}
 `;
 
-function App() {
-	// const { data, error, loading } = useQuery(query);
-	const response = useQuery(query);
-
-	console.log(response);
-
+function Router() {
 	return (
-		<div>
-			<SearchBar/>
-		</div>
+		<BrowserRouter>
+			<Routes>
+				<Route path="*" element={<Counties />} />
+			</Routes>
+		</BrowserRouter>
 	);
 }
 
-export default App;
+export default Router;
