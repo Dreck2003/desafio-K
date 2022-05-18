@@ -10,7 +10,7 @@ export const SearchWrapper = styled.div`
 	}
 `;
 
-export const InputSearch = styled.div`
+export const InputSearch = styled.form`
 	width: 400px;
 	height: 40px;
 	/* border: 1px solid gray; */

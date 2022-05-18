@@ -17,7 +17,7 @@ export const setCountriesContinent = (countries: Country[]) => {
 			};
 		}
 	}, {});
-	console.log("La nueva Lista es: ", countriesList);
+	// console.log("La nueva Lista es: ", countriesList);
 
 	return countriesList;
 };
@@ -26,13 +26,15 @@ export const setCountriesLenguage = (countries: Country[]) => {
 	const countriesList = countries.reduce((acc: PropString, el: Country) => {
 		let returnState = {};
 		el.lenguages.forEach((lenguage: string) => {
+			// console.log("El lenguaje es: ", lenguage);
+
 			if (acc[lenguage]) {
 				returnState = {
 					...acc,
 					[lenguage]: acc[lenguage].concat(el),
 				};
 			} else {
-				return {
+				returnState = {
 					...acc,
 					[lenguage]: [el],
 				};
@@ -40,7 +42,7 @@ export const setCountriesLenguage = (countries: Country[]) => {
 		});
 		return returnState;
 	}, {});
-	console.log("La nueva Lista  por lenguaje es: ", countriesList);
+	// console.log("La nueva Lista  por lenguaje es: ", countriesList);
 
 	return countriesList;
 };
@@ -81,7 +83,6 @@ export const fetchCountries = async (): Promise<
 			body: JSON.stringify({ query: query }),
 		});
 		const data = await response.json();
-		console.log("Los paises son: ", data.data.countries);
 		if (data.data && data.data.countries) {
 			const createHashMap = new HashTable();
 
