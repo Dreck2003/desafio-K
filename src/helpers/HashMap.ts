@@ -67,6 +67,12 @@ class HashTable {
 	): T[] {
 		const anything: string = nameBucket.toLowerCase()[0];
 		if (!this.table[anything]) return [];
+		// console.log(
+		// 	"TODOS LOS PAISES QUE COMIENZAN CON : ",
+		// 	nameBucket,
+		// 	"  SON: ",
+		// 	this.table[anything]
+		// );
 
 		// Si existe el bucket con el nombre, lo recorremos:
 		const acc: T[] = [];
@@ -79,8 +85,12 @@ class HashTable {
 		for (let i = 0; i < allObjects.length; i++) {
 			if (corte > 1000) break;
 			if (compare()) break;
+			// console.log("se ejecuta el callback!");
+
 			const isPassable: boolean = callback(allObjects[i]);
 			//Si isPassable retorno true entonces el objeto cumplio la funcion
+			console.log("PAso la prueba? ", isPassable);
+
 			if (isPassable) {
 				acc.push(allObjects[i]);
 			}

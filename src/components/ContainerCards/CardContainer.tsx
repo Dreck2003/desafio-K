@@ -1,23 +1,31 @@
 import React from "react";
+import { Country } from "../../store/interface";
 import { CountryCard } from "../countries/CountriCard";
 
-const numeros = [1, 2, 3, 4, 5, 6];
-export const CardsContainer = () => {
+interface ContainerProps {
+	title: string;
+	countries: Country[];
+}
+
+export const CardsContainer = ({ title, countries }: ContainerProps) => {
 	return (
-		<div className="cards wrapper-all flex">
-			{numeros.map((i: number) => {
-				return (
-					<CountryCard
-						key={i}
-						name="dikson"
-						capital="notredam"
-						code="33"
-						continent="Asia"
-						emoji="😎"
-						lenguages={["arabe", "others"]}
-					/>
-				);
-			})}
+		<div className="card_container flex">
+			<h3>{title || "Countries"}</h3>
+			<div className="cards wrapper-all">
+				{countries.map((country: Country) => {
+					return (
+						<CountryCard
+							key={country.code}
+							name={country.name}
+							capital={country.capital}
+							code={country.code}
+							continent={country.continent}
+							emoji={country.emoji}
+							lenguages={country.lenguages}
+						/>
+					);
+				})}
+			</div>
 		</div>
 	);
 };
