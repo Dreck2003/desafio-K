@@ -89,9 +89,26 @@
 .uppercase {
 	text-transform: uppercase;
 }
+.bold {
+	font-weight: bold;
+}
 
 .pages {
 	min-height: 100vh;
 	width: 100vw;
 	height: 100vh;
+	--gap: 0;
+}
+
+.text-contrast {
+	color: #f0f0f4;
+}
+
+.letter-s {
+	letter-spacing: 1.2px;
+}
+
+.wrapper-all {
+	width: 100%;
+	height: 100%;
 }
